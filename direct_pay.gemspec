@@ -13,6 +13,7 @@ Gem::Specification.new do |s|
   s.summary     = "TODO: Summary of DirectPay."
   s.description = "TODO: Description of DirectPay."
 
-  s.files = Dir["{lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
+  s.require_paths = ["lib"]
+  s.files         = `git ls-files`.split($/)
 end
