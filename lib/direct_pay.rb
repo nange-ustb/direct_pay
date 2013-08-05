@@ -7,7 +7,6 @@ module DirectPay
     attr_accessor :pid
     attr_accessor :key
     attr_accessor :seller_email
-    attr_accessor :seller_email
 
     def gateway_url
     	'https://mapi.alipay.com/gateway.do'
