@@ -18,13 +18,7 @@ module DirectPay
         warn("DirectPay Warn: total_fee or (price && quantiry) must have one")
       end
 
-      return "#{DirectPay.gateway_url}?#{query_string(options)}"
-    end
-
-    def self.query_string(options)
-      options.merge(:sign_type => 'MD5', :sign => Sign.generate(options)).map do |key, value|
-        "#{CGI.escape(key.to_s)}=#{CGI.escape(value.to_s)}"
-      end.join('&')
+      return "#{DirectPay.gateway_url}?#{Utils.to_query_string(options)}"
     end
 
     def self.check_required_options(options, names)
