@@ -1,11 +1,7 @@
 module DirectPay
   module Utils
     def self.symbolize_keys(hash)
-      new_hash = {}
-      hash.each do |key, value|
-        new_hash[(key.to_sym rescue key) || key] = value
-      end
-      new_hash
+      hash.inject({}){|r,(k,v)| r[k.to_sym] = v;r}
     end
   end
 end

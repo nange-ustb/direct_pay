@@ -18,7 +18,7 @@ module DirectPay
         warn("DirectPay Warn: total_fee or (price && quantiry) must have one")
       end
 
-      "#{DirectPay.gateway_url}?#{query_string(options)}"
+      return "#{DirectPay.gateway_url}?#{query_string(options)}"
     end
 
     def self.query_string(options)
@@ -29,7 +29,7 @@ module DirectPay
 
     def self.check_required_options(options, names)
       names.each do |name|
-        warn("DirectPay Warn: missing required option: #{name}") unless options.has_key?(name.to_sym)
+        warn("DirectPay Warn: missing required option: #{name}") unless options.has_key?(name)
       end
     end
   end
